@@ -8,8 +8,6 @@ layout: default
   {%-endif-%}
 </header>
 
-<nav class="home-navigation" aria-label="Main navigation">
-  {%-include menu_item.html collection=site.data.menu.entries-%}
-</nav>
+{%-include menu_item.html collection=site.data.menu.entries-%}
 
 {{ content }}
