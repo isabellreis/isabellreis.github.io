@@ -5,6 +5,7 @@ entries:
   - title: About
     entries:
       - title: Who I am 
+        url: https://isabellreis.github.io/about.html
       - title: CV
         url: https://isabellreis.github.io/cv.html
       - title: Publications
