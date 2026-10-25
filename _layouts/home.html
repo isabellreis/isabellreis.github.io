@@ -2,12 +2,21 @@
 layout: default
 ---
 <header>
-  <h1>{{ site.title }}</h1>
+  {% assign title_parts = site.title | split: " of " %}
+  <h1>
+    {% if title_parts.size > 1 %}
+      {{ title_parts[0] }}<br />of {{ title_parts[1] }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </h1>
   {%-if site.theme_config.show_description-%}
     <p>{{ site.description }}</p>
   {%-endif-%}
 </header>
 
-{%-include menu_item.html collection=site.data.menu.entries-%}
+<nav class="home-menu" aria-label="Main navigation">
+  {%-include menu_item.html collection=site.data.menu.entries-%}
+</nav>
 
 {{ content }}

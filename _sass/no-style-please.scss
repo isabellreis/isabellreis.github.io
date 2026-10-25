@@ -4,6 +4,7 @@
 $background: #29272b;
 $foreground: #f5f3f6;
 $purple: #ad91c5;
+$orange: #ff8400;
 $paper: #f7f4ed;
 $paper-ink: #171615;
 
@@ -24,9 +25,92 @@ body {
 .post-meta { text-align: right; }
 
 h1 {
-  color: $purple;
+  color: $orange;
   font-family: "Times Modern Black", "Times Modern", "Times New Roman", serif;
+  font-size: clamp(2.75rem, 8.25vw, 5.05rem);
   font-weight: bold;
+  line-height: 1;
+}
+
+.w > header > p {
+  color: $foreground;
+  font-family: "Times Modern Black", "Times Modern", "Times New Roman", serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+
+.w > header > h1 {
+  max-width: 8em;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0;
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  text-align: center;
+}
+
+.w > header > p {
+  margin: 0.45rem 0 0;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.w > header,
+.home-menu,
+.home-menu > ul {
+  box-sizing: border-box;
+}
+
+.home-menu {
+  width: min(100%, 8em);
+  margin: 0 auto;
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+}
+
+.home-menu > ul {
+  padding: 0;
+  list-style: none;
+  font-size: 1rem;
+
+  > li {
+    margin: 2rem 0;
+    font-size: inherit;
+    text-align: center;
+    text-transform: uppercase;
+
+    > ul {
+      margin: 0.25rem 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 1rem;
+      text-align: left;
+      text-transform: none;
+
+      li {
+        margin: 0.15rem 0;
+
+        a {
+          display: flex;
+          align-items: baseline;
+          gap: 0.4rem;
+          text-decoration: none;
+
+          &::after {
+            flex: 1 1 0;
+            min-width: 0;
+            overflow: hidden;
+            color: inherit;
+            content: "································································";
+            font-size: 1.15em;
+            letter-spacing: 0.28em;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      ul { padding-left: 1.25rem; }
+    }
+  }
 }
 
 h2, h3, h4, h5, h6 { margin-top: 3rem; }
@@ -41,6 +125,7 @@ a { color: $purple; }
 
 .paper {
   box-sizing: border-box;
+  aspect-ratio: 1 / 1.414;
   padding: 1.25rem 1.5rem;
   color: $paper-ink;
   background: $paper;
@@ -48,6 +133,7 @@ a { color: $purple; }
 
   h1 { color: $paper-ink; }
   a { color: $purple; }
+  p { text-align: justify; }
 
   table, th, td { border-color: #a9a49b; }
 
@@ -57,6 +143,14 @@ a { color: $purple; }
   }
 
   blockquote { border-color: #a9a49b; }
+}
+
+.profile-photo {
+  border: 1px solid #a9a49b;
+  padding: 4px;
+  margin-left: 1rem;
+  margin-bottom: 0.75rem;
+  background: $paper;
 }
 
 *:target { background: #49434f; }
